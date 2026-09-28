@@ -24,3 +24,8 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* apparently the biggest UX feature everyone should implement in their products */
+a[target="_blank"]::after {
+  content: "↗️";
+}

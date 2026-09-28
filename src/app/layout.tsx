@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { RootProvider } from "fumadocs-ui/provider/next";
+import type { Metadata } from "next";
+
+import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`} // hardcoded to dark mode, TODO: gotta tie this to the fumadocs theme toggle
     >
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col`}>
         <RootProvider>{children}</RootProvider>
       </body>
     </html>
